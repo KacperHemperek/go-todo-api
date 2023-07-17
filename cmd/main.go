@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/go-playground/validator/v10"
@@ -20,7 +21,7 @@ func main() {
 
 	validate := validator.New()
 
-	port := initializers.ServerSecrets.PORT
+	port := fmt.Sprintf(":%s", initializers.ServerSecrets.PORT)
 
 	app := fiber.New()
 
